@@ -41,10 +41,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         field: 'away_team_goals',
       },
-      password: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
       inProgress: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
