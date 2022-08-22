@@ -21,6 +21,7 @@ export default class LoginService {
 
   public async login(email: string, password: string): Promise<string | void> {
     LoginService.validateLogin(email, password);
+    // console.log(LoginService.validateLogin(email, password));
     const data = await this.model.findOne({ where: { email } });
     if (!data) throw new BaseError(401, 'Incorrect email or password');
     const token = JWT.generateToken(data);

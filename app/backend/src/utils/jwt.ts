@@ -17,7 +17,7 @@ export default class JWT {
     return token;
   }
 
-  static validToken(token: string) {
+  static validateToken(token: string) {
     try {
       const verified = jwt.verify(token, secret);
       return verified;
