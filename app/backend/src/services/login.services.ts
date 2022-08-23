@@ -10,11 +10,12 @@ export default class LoginService {
 
   static validateLogin(email: string, password: string) {
     const schema = joi.object({
-      email: joi.string().required(),
-      password: joi.string().required(),
+      email: joi.string().required().email(),
+      password: joi.string().required().min(6),
     }).validate({ email, password });
 
     if (schema.error) {
+      console.log(schema.error.message);
       throw new BaseError(400, 'All fields must be filled');
     }
   }
