@@ -5,9 +5,10 @@ export default class LoginController {
   constructor(private loginService = new LoginService()) {
   }
 
-  public static validateLogin(req: Request, res: Response) {
-    const { user } = req.body;
-    return res.status(200).json({ role: user.data.role });
+  static async validateLogin(req: Request, res: Response): Promise<Response> {
+    const { role } = req.body.user;
+    console.log(role);
+    return res.status(200).json({ role });
   }
 
   public async login(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
