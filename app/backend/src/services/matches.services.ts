@@ -3,7 +3,7 @@ import Teams from '../database/models/team';
 import IMatches from '../interfaces/IMatches';
 import BaseError from '../utils/baseError';
 
-export default class MatchsService {
+export default class MatchesService {
   constructor(private model = Matches) {
     this.model = model;
   }
